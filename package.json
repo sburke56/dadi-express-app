@@ -1,0 +1,20 @@
+{
+  "name": "dadi",
+  "version": "1.0.0",
+  "description": "Dadi interview application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Burke",
+  "license": "ISC",
+  "dependencies": {
+    "consolidate": "^0.14.0",
+    "dustjs-helpers": "^1.7.3",
+    "dustjs-linkedin": "^2.7.2",
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "morgan": "^1.7.0",
+    "request": "^2.72.0"
+  }
+}
