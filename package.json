@@ -1,19 +1,20 @@
 {
   "name": "dadi",
   "version": "1.0.0",
-  "description": "Dadi interview application.",
+  "description": "Dadi Express Test App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jasmine-node --verbose spec"
   },
   "author": "Stephen Burke",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "consolidate": "^0.14.0",
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.2",
     "express": "^4.13.4",
-    "http": "0.0.0",
+    "jasmine-node": "^1.14.5",
     "morgan": "^1.7.0",
     "request": "^2.72.0"
   }

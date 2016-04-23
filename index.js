@@ -2,42 +2,25 @@ var express = require('express');
 var cons = require('consolidate');
 var app = express();
 var morgan = require('morgan')
-var request = require('request')
+var movie = require('./routes/movie');
 
-// Set up http logging; for now just using development which is
-// concise & colored.
+// Use morgan for http logging; for now just using development which
+// is concise & colored.
 app.use(morgan('dev'))
 
-// assign the dust engine to .html files
+// Using consolidate as middleware to render the templates with dust.
 app.engine('html', cons.dust);
 
-// set .html as the default extension
+// For consolidate middleware set the default extension for the dust
+// templates to html so it can find them and render them.
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Consolidate.js'
-  });
+  res.send('I implemented a <a href="movie" title="movie route, go there">/movie route</a> Go there.');
 });
 
-app.get('/movie', function(req, res){
-  var movie = {}
-
-  request.get('http://www.omdbapi.com/?t=snake+eyes&y=&plot=short&r=jsonemail',
-	      function(error, response, body) {
-		if (!error && response.statusCode == 200) {
-		  movie = JSON.parse(response.body);
-		  console.log(movie);
-
-		  res.render('movie', {
-		    title: 'Movie',
-		    language: "english",
-		    movie: movie
-		  });
-		}
-	      });
-});
+app.use('/movie', movie);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
