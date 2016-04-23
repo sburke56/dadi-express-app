@@ -1,21 +1,22 @@
 ### DADI Express App
 
-The DADI Express App is a simple Node JS application designed to give us a small glimpse into your coding practice. It is not essential to return a fully functional application, although that would be amazing.
+The DADI Express App demonstrates the use of Express JS which is a webserver that can be run with node. It serves up a main page at http://localhost:3000 and a [Greatest Movie Ever page](http://localhost:3000/movie) which makes a query for a movie from [The Open Movie Database](www.omdbapi.com).
 
-Please use the included HTML templates to generate an [Express](http://expressjs.com/) application.
+It is using **dust.js** to render the template and **consolidate** as the middleware to do the compiling of the template.  There is more to be done as far as tuning goes if this was to be put into production making sure to be pre-compiling the templates.
 
-Some things to consider:
+I used Jasmine for unit testing the routes and for HTTP logging there it is using **morgan** and simply logging to the console.
 
-* **templating language**: while we currently use Dust in our products, you can choose any
-templating language you are familiar with
-* **data source**: again, up to you! it can be static data or you can hook up to an API
-to provide data
-* **unit testing**: not essential, but the inclusion of a functional test suite would be nice
-to see
-* **logging**: an HTTP request log, to file or console, would also be a nice touch
+## Installing & Running the App ##
 
-Please create a GitHub repository for your application and send us the link when ready, along with instructions for installing and running it.
+```
+npm install
+node index.js
+```
 
-_Have fun!_
+## Running the Tests ##
 
-**N.B.** Please send your repository link and/or any questions to James Lambie, jl@dadi.co
+I included a Jasmine test which tests the /movie route and checks to make sure the correct movie data is received.
+
+```
+npm test
+```
