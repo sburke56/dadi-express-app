@@ -9,6 +9,8 @@ I used Jasmine for unit testing the routes and for HTTP logging it is using **mo
 ## Installing & Running the App ##
 
 ```
+git clone https://github.com/sburke56/dadi-express-app.git
+cd dadi-express-app
 npm install
 node index.js
 ```
@@ -20,3 +22,10 @@ I included a Jasmine test which tests the /movie route and checks to make sure t
 ```
 npm test
 ```
+
+## Code Explanation ##
+The index.js file simply sets up all the dependencies for the app and sets up the routes.  The routes are setup so the routes directory would contain any routes that hang off the base URL.  So all the /movie routes would be in the /routes/movie.js file.
+
+As for the data feed omdbapi was open and I didn't have to worry about distributing an API key to any consumers of this app or possibly checking it into source control which isn't a good idea.  That data is passed to the dust template and it simply outputs an <ul> element.
+
+If you have any problems running this sample here's my email <steve.burke.56@gmail.com>

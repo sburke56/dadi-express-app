@@ -15,5 +15,6 @@
     "jasmine-node": "^1.14.5",
     "morgan": "^1.7.0",
     "request": "^2.72.0"
-  }
+  },
+  "repository": "https://github.com/sburke56/dadi-express-app.git"
 }
